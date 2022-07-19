@@ -8,6 +8,7 @@
     background-image: url(../../../images/element__like/Vector\ \(1\).svg);
     border: none;
     background-color: unset;
+    background-repeat: no-repeat;
 }
 
 /* я поставил бэкграунд, пишу это потому, что я слегка дальтоник и это задание сложно сделать, когда я не вижу отличия*/
