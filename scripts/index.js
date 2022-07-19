@@ -6,9 +6,9 @@ const inputName = document.querySelector('.popup__input_type_name');
 
 const inputAbout = document.querySelector('.popup__input_type_about');
 
-const inputCardsName = document.querySelector('.cards__input_type_name');
+const inputCardsName = document.querySelector('.cards__input__type_name');
 
-const inputCardsLink = document.querySelector('.cards__input_type_link');
+const inputCardsLink = document.querySelector('.cards__input__type_link');
 
 
 const initialCards = [
