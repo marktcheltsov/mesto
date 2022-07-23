@@ -129,11 +129,16 @@ function creatCardSettings() {
   const imgCreate = template.content.querySelector('.element__image');
   const titleCreate = template.content.querySelector('.element__title');
 
+  function creatCard(CardsLink, CardsName) {
+    imgCreate.src= CardsLink;
+    titleCreate.textContent = CardsName;
+    imgCreate.alt= CardsName;
+  }
+
+
  function creatDefoltCard() {
   for (let i = 0; i < initialCards.length; i++) {
-  imgCreate.src= initialCards[i].link;
-  titleCreate.textContent = initialCards[i].name;
-  imgCreate.alt= initialCards[i].name;
+    creatCard(initialCards[i].link, initialCards[i].name);
   creatCardSettings();
   };
 };
@@ -142,11 +147,7 @@ creatDefoltCard();
 
 function creatNewCard(evt) {
   evt.preventDefault();
-
-  imgCreate.src= inputCardsLink.value;
-  titleCreate.textContent = inputCardsName.value;
-  imgCreate.alt= inputCardsName.value;
-  
+  creatCard(inputCardsLink.value, inputCardsName.value);
   creatCardSettings();
   onClickOpenPopupCard();
   clearInputCards();
@@ -159,3 +160,4 @@ profileEditButton.addEventListener('click', onClickOpenPopup);
 popupProfileCloseButton.addEventListener('click', onClickOpenPopup);
 popupImgCloseBtn.addEventListener('click', onClickOpenPopupImage);
 popupCardsSaveBtn.addEventListener('click', creatNewCard);
+
