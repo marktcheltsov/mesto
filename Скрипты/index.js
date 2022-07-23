@@ -61,6 +61,8 @@ const popupTitleImg = document.querySelector('.popup-image__title');
 
 const cardsContainer = document.querySelector('.elements');
 
+const popupImgCloseBtn = document.querySelector('.popup-image__close-button');
+
 function popapOpen(popup) {
   popup.classList.toggle('popup_opened');
 };
@@ -99,7 +101,7 @@ function handleProfileFormSubmit(evt) {
 
 function creatCardSettings() {
   const template = document.querySelector('#template');
-  let templateItems = template.content.cloneNode(true);
+  const templateItems = template.content.cloneNode(true);
 
   cardsContainer.prepend(templateItems);
 
@@ -149,8 +151,6 @@ function creatNewCard(evt) {
   onClickOpenPopupCard();
   clearInputCards();
 };
-
-const popupImgCloseBtn = document.querySelector('.popup-image__close-button');
 
 cardEditButton.addEventListener('click', onClickOpenPopupCard);
 cardCloseButton.addEventListener('click', onClickOpenPopupCard);
