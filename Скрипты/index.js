@@ -161,3 +161,4 @@ popupProfileCloseButton.addEventListener('click', onClickOpenPopup);
 popupImgCloseBtn.addEventListener('click', onClickOpenPopupImage);
 popupCardsSaveBtn.addEventListener('click', creatNewCard);
 
+
