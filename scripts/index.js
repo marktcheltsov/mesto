@@ -143,8 +143,8 @@ function creatCard(сardsLink, сardsName) {
   img.src= сardsLink;
   title.textContent = сardsName;
   img.alt= сardsName;
+
 };
- 
 
  function creatDefoltCard() {
   for (let i = 0; i < initialCards.length; i++) {
@@ -168,4 +168,3 @@ profileEditButton.addEventListener('click', onClickOpenPopup);
 popupProfileCloseButton.addEventListener('click', onClickOpenPopup);
 popupImgCloseBtn.addEventListener('click', onClickOpenPopupImage);
 popupCardsContainer.addEventListener('submit', creatNewCard);
- 
