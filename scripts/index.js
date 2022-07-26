@@ -154,10 +154,11 @@ function creatCard(сardsLink, сardsName) {
  
 creatDefoltCard();
 
+
 function creatNewCard(evt) {
   evt.preventDefault();
-  creatCard(inputCardsLink.value, inputCardsName.value);
   onClickOpenPopupCard();
+  creatCard(inputCardsLink.value, inputCardsName.value);
   clearInputCards();
 };
  
@@ -168,3 +169,4 @@ profileEditButton.addEventListener('click', onClickOpenPopup);
 popupProfileCloseButton.addEventListener('click', onClickOpenPopup);
 popupImgCloseBtn.addEventListener('click', onClickOpenPopupImage);
 popupCardsContainer.addEventListener('submit', creatNewCard);
+ 
