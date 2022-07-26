@@ -157,8 +157,8 @@ creatDefoltCard();
 
 function creatNewCard(evt) {
   evt.preventDefault();
-  onClickOpenPopupCard();
   creatCard(inputCardsLink.value, inputCardsName.value);
+  onClickOpenPopupCard();
   clearInputCards();
 };
  
