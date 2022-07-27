@@ -109,20 +109,19 @@ function handleProfileFormSubmit(evt) {
     onClickOpenPopupProfile()
 };
  
-function creatCard(сardsLink, сardsName) {
+function creatCard(cardsLink, cardsName) {
   const templateItems = template.content.cloneNode(true);
 
-  cardsContainer.prepend(templateItems);
 
-  const btnLike = document.querySelector('.element__like');
+  const btnLike = templateItems.querySelector('.element__like');
  
-  const element = document.querySelector('.element');
+  const element = templateItems.querySelector('.element');
  
-  const deleteIcon = document.querySelector('.element__delete-icon');
+  const deleteIcon = templateItems.querySelector('.element__delete-icon');
  
-  const img = document.querySelector('.element__image');
+  const img = templateItems.querySelector('.element__image');
 
-  const title = document.querySelector('.element__title')
+  const title = templateItems.querySelector('.element__title')
  
   img.onclick = function () {
     popupElemenImg.src= img.src;
@@ -131,7 +130,7 @@ function creatCard(сardsLink, сardsName) {
     popupElemenImg.alt= imgContainer.querySelector('.element__title').textContent;
     onClickOpenPopupImage();
   };
- 
+
   deleteIcon.onclick = function () {
     deleteIcon.closest('.element').remove();
   };
@@ -140,15 +139,20 @@ function creatCard(сardsLink, сardsName) {
     btnLike.classList.toggle('element__like_active');
   };
 
-  img.src= сardsLink;
-  title.textContent = сardsName;
-  img.alt= сardsName;
+  img.src= cardsLink;
+  title.textContent = cardsName;
+  img.alt= cardsName;
+  return templateItems;
+};
 
+function addCard(cardsLink, cardsName) {
+  const card = creatCard(cardsLink, cardsName);
+  cardsContainer.prepend(card);
 };
 
  function creatDefoltCard() {
   for (let i = 0; i < initialCards.length; i++) {
-  creatCard(initialCards[i].link, initialCards[i].name);
+  addCard(initialCards[i].link, initialCards[i].name);
   };
 };
  
@@ -157,7 +161,7 @@ creatDefoltCard();
 
 function creatNewCard(evt) {
   evt.preventDefault();
-  creatCard(inputCardsLink.value, inputCardsName.value);
+  addCard(inputCardsLink.value, inputCardsName.value);
   onClickOpenPopupCard();
   clearInputCards();
 };
@@ -169,4 +173,3 @@ profileEditButton.addEventListener('click', onClickOpenPopup);
 popupProfileCloseButton.addEventListener('click', onClickOpenPopup);
 popupImgCloseBtn.addEventListener('click', onClickOpenPopupImage);
 popupCardsContainer.addEventListener('submit', creatNewCard);
- 
