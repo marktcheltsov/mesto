@@ -5,5 +5,5 @@ Mesto - сайт о путешествиях
 
 тут используется технология для создания карточек, в которых вы можете рассказать где вы были
 
-https://marktcheltsov.github.io/mesto/index.html
+https://marktcheltsov.github.io/mesto/index.html 
 
