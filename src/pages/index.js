@@ -83,7 +83,7 @@ const popupProfileForm = document.querySelector('.popup__profile-form');
 
 const popupCardForm = document.querySelector('.popup__card-form');
 
-const popupAvatarForm = document.querySelector('.popup__avatar-form');
+const popupAvatarForm = document.querySelector('.popup-avatar__form');
 
 const popupCardButtonText = 'Создать';
 
